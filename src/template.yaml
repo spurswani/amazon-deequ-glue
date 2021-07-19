@@ -425,7 +425,7 @@ Resources:
               KeyType: HASH
           Projection:
             ProjectionType: ALL
-      TableName: !Sub DataQualitySuggestion-${pEnv}
+      TableName: !Sub DataQualitySuggestion
 
   rDataQualityAnalysisDynamoDBTable:
     Type: AWS::DynamoDB::Table
@@ -447,7 +447,7 @@ Resources:
               KeyType: HASH
           Projection:
             ProjectionType: ALL
-      TableName: !Sub DataQualityAnalyzer-${pEnv}
+      TableName: !Sub DataQualityAnalyzer
 
   ######## LAMBDA #########
   rGlueCrawlerLambdaFunction:

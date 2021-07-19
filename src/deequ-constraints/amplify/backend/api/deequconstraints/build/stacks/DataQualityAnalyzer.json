@@ -89,36 +89,7 @@
         "DataQualityAnalyzerTable": {
             "Type": "AWS::DynamoDB::Table",
             "Properties": {
-                "TableName": {
-                    "Fn::If": [
-                        "HasEnvironmentParameter",
-                        {
-                            "Fn::Join": [
-                                "-",
-                                [
-                                    "DataQualityAnalyzer",
-                                    {
-                                        "Ref": "GetAttGraphQLAPIApiId"
-                                    },
-                                    {
-                                        "Ref": "env"
-                                    }
-                                ]
-                            ]
-                        },
-                        {
-                            "Fn::Join": [
-                                "-",
-                                [
-                                    "DataQualityAnalyzer",
-                                    {
-                                        "Ref": "GetAttGraphQLAPIApiId"
-                                    }
-                                ]
-                            ]
-                        }
-                    ]
-                },
+                "TableName": "DataQualityAnalyzer",
                 "KeySchema": [
                     {
                         "AttributeName": "id",
@@ -286,36 +257,7 @@
                                             "Fn::Sub": [
                                                 "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
                                                 {
-                                                    "tablename": {
-                                                        "Fn::If": [
-                                                            "HasEnvironmentParameter",
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualityAnalyzer",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        },
-                                                                        {
-                                                                            "Ref": "env"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualityAnalyzer",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
+                                                    "tablename": "DataQualityAnalyzer"
                                                 }
                                             ]
                                         },
@@ -323,36 +265,7 @@
                                             "Fn::Sub": [
                                                 "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
                                                 {
-                                                    "tablename": {
-                                                        "Fn::If": [
-                                                            "HasEnvironmentParameter",
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualityAnalyzer",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        },
-                                                                        {
-                                                                            "Ref": "env"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualityAnalyzer",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
+                                                    "tablename": "DataQualityAnalyzer"
                                                 }
                                             ]
                                         }
@@ -382,36 +295,7 @@
                     "AwsRegion": {
                         "Ref": "AWS::Region"
                     },
-                    "TableName": {
-                        "Fn::If": [
-                            "HasEnvironmentParameter",
-                            {
-                                "Fn::Join": [
-                                    "-",
-                                    [
-                                        "DataQualityAnalyzer",
-                                        {
-                                            "Ref": "GetAttGraphQLAPIApiId"
-                                        },
-                                        {
-                                            "Ref": "env"
-                                        }
-                                    ]
-                                ]
-                            },
-                            {
-                                "Fn::Join": [
-                                    "-",
-                                    [
-                                        "DataQualityAnalyzer",
-                                        {
-                                            "Ref": "GetAttGraphQLAPIApiId"
-                                        }
-                                    ]
-                                ]
-                            }
-                        ]
-                    }
+                    "TableName": "DataQualityAnalyzer"
                 }
             },
             "DependsOn": [

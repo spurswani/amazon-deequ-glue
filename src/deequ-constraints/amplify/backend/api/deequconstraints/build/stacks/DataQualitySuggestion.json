@@ -89,36 +89,7 @@
         "DataQualitySuggestionTable": {
             "Type": "AWS::DynamoDB::Table",
             "Properties": {
-                "TableName": {
-                    "Fn::If": [
-                        "HasEnvironmentParameter",
-                        {
-                            "Fn::Join": [
-                                "-",
-                                [
-                                    "DataQualitySuggestion",
-                                    {
-                                        "Ref": "GetAttGraphQLAPIApiId"
-                                    },
-                                    {
-                                        "Ref": "env"
-                                    }
-                                ]
-                            ]
-                        },
-                        {
-                            "Fn::Join": [
-                                "-",
-                                [
-                                    "DataQualitySuggestion",
-                                    {
-                                        "Ref": "GetAttGraphQLAPIApiId"
-                                    }
-                                ]
-                            ]
-                        }
-                    ]
-                },
+                "TableName":"DataQualitySuggestion",
                 "KeySchema": [
                     {
                         "AttributeName": "id",
@@ -286,36 +257,7 @@
                                             "Fn::Sub": [
                                                 "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
                                                 {
-                                                    "tablename": {
-                                                        "Fn::If": [
-                                                            "HasEnvironmentParameter",
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualitySuggestion",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        },
-                                                                        {
-                                                                            "Ref": "env"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualitySuggestion",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
+                                                    "tablename":"DataQualitySuggestion"
                                                 }
                                             ]
                                         },
@@ -323,36 +265,7 @@
                                             "Fn::Sub": [
                                                 "arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
                                                 {
-                                                    "tablename": {
-                                                        "Fn::If": [
-                                                            "HasEnvironmentParameter",
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualitySuggestion",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        },
-                                                                        {
-                                                                            "Ref": "env"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            },
-                                                            {
-                                                                "Fn::Join": [
-                                                                    "-",
-                                                                    [
-                                                                        "DataQualitySuggestion",
-                                                                        {
-                                                                            "Ref": "GetAttGraphQLAPIApiId"
-                                                                        }
-                                                                    ]
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
+                                                    "tablename":"DataQualitySuggestion"
                                                 }
                                             ]
                                         }
