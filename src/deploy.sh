@@ -80,7 +80,7 @@ else
 fi
 
 mkdir $DIRNAME/output
-aws cloudformation package --profile $PROFILE --region $REGION --template-file $DIRNAME/template.yaml --role-arn arn:aws:iam::793583067385:role/AdminAccess --s3-bucket $S3_BUCKET --s3-prefix deequ/templates --output-template-file $DIRNAME/output/packaged-template.yaml
+aws cloudformation package --profile $PROFILE --region $REGION --template-file $DIRNAME/template.yaml --s3-bucket $S3_BUCKET --s3-prefix deequ/templates --output-template-file $DIRNAME/output/packaged-template.yaml
 
 echo "Checking if stack exists ..."
 if ! aws cloudformation describe-stacks --profile $PROFILE  --region $REGION --stack-name $STACK_NAME; then
@@ -103,6 +103,7 @@ if ! aws cloudformation describe-stacks --profile $PROFILE  --region $REGION --s
     --profile $PROFILE \
     --region $REGION \
     --stack-name $STACK_NAME \
+    --role-arn arn:aws:iam::793583067385:role/AdminAccess \
     --template-body file://$DIRNAME/output/packaged-template.yaml \
     --parameters \
       ParameterKey=pArtifactsBucket,ParameterValue=$S3_BUCKET \
